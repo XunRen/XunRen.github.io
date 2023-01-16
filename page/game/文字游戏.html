@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>文字游戏</title>
+    <style type="text/css">
+			*{
+				margin: auto;
+				padding: 0px;
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			.content{
+				border-radius: 10%;
+				width: 400px;
+				height: 550px;
+				background-color: antiquewhite;
+			}
+			.clear{
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			#result{
+				margin-top: 24px;
+				font-size: 16px;
+				width: 60%;
+				height: 72px;
+				text-align: left;
+				border-radius: 20px;
+				background-color: #FFE4C4;
+			}
+			.symbol{
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:bisque;
+			}
+			.number{
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:beige;
+			}
+			.calculate{
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			.content input:hover{
+				box-shadow: 5px 5px 5px #888888;
+			}
+			.content input:active{
+				background-color: #FF0000;
+			}
+		</style>
+
+</head>
+
+<style>
+ul {
+list-style-type: none;
+margin: 1px;
+padding: 0px;
+width: 200px;
+background-color: #f7f4f1;
+text-align:center;
+}
+
+li a {
+display: block;
+color: #000;
+padding: 8px 16px;
+text-decoration: none;
+}
+
+li a.active {
+background-color: #6477;
+color: white;
+}
+li a:hover:not(.active) {
+background-color: #505;
+color: white;
+}
+</style>
+
+<script>
+    var food = 10;
+    var people = 1;
+    var wood = 5;
+    var endurance = 100;
+	if(endurance<0)
+	{
+		endurance=0;
+	}
+    function CollectWood()
+    {
+		if(endurance>0)
+		{
+        var woodn=parseInt(Math.ceil(Math.random()*3));
+        wood=wood+woodn;
+        document.getElementById("Wood").innerHTML=wood;
+		endurance=endurance-(woodn*2);
+		document.getElementById("Endurance").innerHTML=endurance;
+		}
+		else
+		{
+			alert("体力不够");
+		}
+    }
+	function CollectFood()
+    {
+		if(endurance>0)
+		{
+			var foodn=parseInt(Math.ceil(Math.random()*6));
+        food=food+foodn;
+        document.getElementById("Food").innerHTML=food;
+		endurance=endurance-foodn;
+		document.getElementById("Endurance").innerHTML=endurance;
+		}
+		else
+		{
+			alert("体力不够");
+		}
+    }
+	function LookEndurance()
+    {
+		if(endurance>0)
+		{
+			alert("体力还剩下" + endurance + "点");
+		}
+		else
+		{
+			alert("体力已经透支，快去休息");
+		}
+    }
+	function Allrest()
+	{
+		var enduranceh;
+		var endurances = parseInt(Math.ceil(Math.random()*3));
+		var endurancen = parseInt(Math.ceil(Math.random()*30));
+		var tou = parseInt(Math.ceil(Math.random()*3));;
+		if(endurances=1)
+		{
+			enduranceh = 30 + endurancen;
+		}
+		else
+		{
+			enduranceh = 30 - endurancen;
+		}
+		endurance = endurance+enduranceh;
+		if(endurance>300)
+		{
+			endurance=300;
+		}
+		document.getElementById("Endurance").innerHTML=endurance;
+		alert("一天过去了");
+		alert("恢复了" + enduranceh + "点体力");
+		if(tou == 1 && wood>0)
+		{
+			var touWood = parseInt(Math.ceil(Math.random()*5));;
+			if(wood-touWood < 0)
+			{
+				alert("被偷了" + wood + "个木头");
+				wood=0;
+				document.getElementById("Wood").innerHTML=wood;
+			}
+			else
+			{
+				wood=wood-touWood;
+				alert("被偷了" + touWood + "个木头");
+				document.getElementById("Wood").innerHTML=wood;
+			}
+		}
+		else if(tou ==2 && food>0)
+		{
+			var touFood = parseInt(Math.ceil(Math.random()*10));;
+			if(food-touFood < 0)
+			{
+				alert("被偷了" + food + "个食物");
+				food=0;
+				document.getElementById("Food").innerHTML=food;
+			}
+			else
+			{
+				food=food-touFood;
+				alert("被偷了" + touFood + "个食物");
+				document.getElementById("Food").innerHTML=food;
+			}
+		}
+		else
+		{
+			alert("今天没有被偷东西");
+		}
+			
+	}
+	function Partialrest()
+	{
+		var enduranceh;
+		var endurances = parseInt(Math.ceil(Math.random()*3));
+		var endurancen = parseInt(Math.ceil(Math.random()*20));
+		var tou = parseInt(Math.ceil(Math.random()*3));;
+		if(people>1)
+		{
+			if(endurances=1)
+		{
+			enduranceh = 15 + endurancen;
+		}
+		else
+		{
+			enduranceh = 15 - endurancen;
+		}
+		endurance = endurance+enduranceh;
+		if(endurance>300)
+		{
+			endurance=300;
+		}
+		document.getElementById("Endurance").innerHTML=endurance;
+		alert("一天过去了");
+		alert("恢复了" + enduranceh + "点体力");	
+		}
+		else
+		{
+			alert("人数不够");
+		}
+	}
+</script>
+
+<body>
+<ul>
+    <li><a href="../杂项.html">·跳转至杂项</a></li>
+    <li><a href="../../index.html">·跳转回主页面</a></li>
+</ul>
+<span>木头:</span><span id="Wood">5</span><br>
+<span>食物:</span><span id="Food">10</span><br>
+<span>人数:</span><span id="People">1</span><br>
+<span>总体力值:</span><span id="Endurance">100</span><br>
+<button onclick="CollectWood()">收集木头</button>
+<button onclick="CollectFood()">收集食物</button>
+<br><button onclick="LookEndurance()">查看体力</button>
+<br><button onclick="Allrest()">全体休息</button>
+<br><button onclick="Partialrest()">部分休息(50%的人，如果人数是奇数就是总人数+1÷2-1的人休息<br>
+	并且不会被偷东西)</button>
+</body>
+
+</html>
