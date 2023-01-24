@@ -3,79 +3,79 @@
 <head>
     <meta charset="UTF-8">
         <title>主页面</title>
-        <style type="text/css">
-                *{
-                    margin: auto;
-                    padding: 0px;
-                    text-align: center;
-                    font-family: "微软雅黑";
-                }
-                .content{
-                    border-radius: 10%;
-                    width: 400px;
-                    height: 550px;
-                    background-color: antiquewhite;
-                }
-                .clear{
-                    border-radius: 50%;
-                    width: 20%;
-                    height: 72px;
-                    background-color: #FF4500;
-                }
-                #result{
-                    margin-top: 24px;
-                    font-size: 16px;
-                    width: 60%;
-                    height: 72px;
-                    text-align: left;
-                    border-radius: 20px;
-                    background-color: #FFE4C4;
-                }
-                .symbol{
-                    margin-top: 36px;
-                    font-size: xx-large;
-                    border-radius: 50%;
-                    width: 20%;
-                    height: 72px;
-                    background-color:bisque;
-                }
-                .number{
-                    margin-top: 36px;
-                    font-size: xx-large;
-                    border-radius: 50%;
-                    width: 20%;
-                    height: 72px;
-                    background-color:beige;
-                }
-                .calculate{
-                    margin-top: 36px;
-                    font-size: xx-large;
-                    border-radius: 50%;
-                    width: 20%;
-                    height: 72px;
-                    background-color: #FF4500;
-                }
-                .content input:hover{
-                    box-shadow: 5px 5px 5px #888888;
-                }
-                .content input:active{
-                    background-color: #FF0000;
-                }
-            </style>
-        <script type="text/javascript">
-                function clearValue(){
-                    document.getElementById("result").value="";
-                }
-                function get(value){
-                    document.getElementById("result").value+=value;
-                }
-                function calculate(){
-                    var result=0;
-                    result=document.getElementById("result").value;
-                    document.getElementById("result").value="";
-                    document.getElementById("result").value=eval(result);
-                };
-            </script>
+    <style type="text/css">
+			*{
+				margin: auto;
+				padding: 0px;
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			.content{
+				border-radius: 10%;
+				width: 400px;
+				height: 550px;
+				background-color: antiquewhite;
+			}
+			.clear{
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			#result{
+				margin-top: 24px;
+				font-size: 16px;
+				width: 60%;
+				height: 72px;
+				text-align: left;
+				border-radius: 20px;
+				background-color: #FFE4C4;
+			}
+			.symbol{
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:bisque;
+			}
+			.number{
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:beige;
+			}
+			.calculate{
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			.content input:hover{
+				box-shadow: 5px 5px 5px #888888;
+			}
+			.content input:active{
+				background-color: #FF0000;
+			}
+		</style>
+    <script type="text/javascript">
+			function clearValue(){
+				document.getElementById("result").value="";
+			}
+			function get(value){
+				document.getElementById("result").value+=value;
+			}
+			function calculate(){
+				var result=0;
+				result=document.getElementById("result").value;
+				document.getElementById("result").value="";
+				document.getElementById("result").value=eval(result);
+			};
+		</script>
 </head>
 <style>
 ul {
@@ -105,6 +105,7 @@ color: white;
 </style>
 <body>
 <p>这里就是月镜的官网了!!!</p>
+<a href="moon.tmod">点击下载模组文件</a>
 <ul>
     <li><a href="page/杂项.html">·跳转到杂项</a></li>
     <li><a href="page/日志.html">·跳转到日志</a></li>
